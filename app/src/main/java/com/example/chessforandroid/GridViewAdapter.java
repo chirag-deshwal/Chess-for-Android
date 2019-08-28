@@ -11,25 +11,19 @@ import com.example.chessforandroid.Pieces.AbstractPiece;
 
 public class GridViewAdapter extends BaseAdapter {
 
-    private AbstractPiece[][] board;
-    private AbstractPiece[] boardToOneDArray;
+    private AbstractPiece[] board;
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public GridViewAdapter(Context context, AbstractPiece[][] board) {
+    public GridViewAdapter(Context context, AbstractPiece[] board) {
         this.board = board;
         this.context = context;
         this.layoutInflater = (LayoutInflater.from(context));
-        this.boardToOneDArray = arrayTransformer();
     }
 
     @Override
     public int getCount() {
-        int length = 0;
-        for (int i = 0; i < board.length; i++){
-            length += board[i].length;
-        }
-        return length;
+        return board.length;
     }
 
     @Override
@@ -49,23 +43,9 @@ public class GridViewAdapter extends BaseAdapter {
 
         // Set tile background colors
         view.setBackgroundColor(Constants.newBoardColors[i]);
-        if (boardToOneDArray[i] != null){
-            imageView.setImageResource(boardToOneDArray[i].imageID);
+        if (board[i] != null){
+            imageView.setImageResource(board[i].imageID);
         }
         return view;
     }
-
-    private AbstractPiece[] arrayTransformer(){
-        AbstractPiece[] temp = new AbstractPiece[64];
-        int tempIndex = 0;
-        for (int c = 0; c < board.length; c++){
-            for (int r = 0; r < board[c].length; r++){
-                temp[tempIndex] = board[c][r];
-                tempIndex +=1;
-            }
-        }
-        return temp;
-    }
-
-
 }

@@ -1,6 +1,6 @@
 package com.example.chessforandroid.Pieces;
 
-import com.example.chessforandroid.Position;
+import com.example.chessforandroid.Integer;
 
 import java.util.ArrayList;
 
@@ -13,6 +13,6 @@ public abstract class AbstractPiece {
         this.color = color;
     }
 
-    public abstract ArrayList<Position> getAloudMoves(Position position, AbstractPiece[][] board);
+    public abstract ArrayList<Integer> getAloudMoves(Integer position, AbstractPiece[][] board);
 
 }
