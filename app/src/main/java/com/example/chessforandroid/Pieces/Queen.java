@@ -2,7 +2,10 @@ package com.example.chessforandroid.Pieces;
 
 import android.graphics.Color;
 
+import com.example.chessforandroid.Position;
 import com.example.chessforandroid.R;
+
+import java.util.ArrayList;
 
 public class Queen extends AbstractPiece {
 
@@ -16,8 +19,18 @@ public class Queen extends AbstractPiece {
                 this.imageID = R.drawable.b_queen;
         }
     }
-    @Override
-    public void getRules() {
 
+    @Override
+    public ArrayList<Position> getAloudMoves(Position position, AbstractPiece[][] board) {
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        if (color == Color.BLACK){
+            return "Black Queen";
+        }else {
+            return "White Queen";
+        }
     }
 }
