@@ -35,7 +35,7 @@ public class Match {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             private boolean isFirstClick = true;
-            private int clickedTile = 100;
+            private int clickedTile = 99;
             private AbstractPiece pieceOnTile = null;
             private int colorsTurn = Color.WHITE;
             ArrayList<Integer> aloudMoves = new ArrayList<>();
@@ -54,7 +54,10 @@ public class Match {
                     try {
                         aloudMoves = board[i].getAloudMoves(i, board);
                         for (int b = 0; b < aloudMoves.size(); b++){
-                            adapterView.getChildAt(aloudMoves.get(b)).setBackgroundColor(Color.CYAN);
+                            if (aloudMoves.get(b) != 100){
+                                adapterView.getChildAt(aloudMoves.get(b)).setBackgroundColor(Color.CYAN);
+                            }
+
                         }
                     } catch (Exception e){e.printStackTrace();}
 
@@ -66,7 +69,7 @@ public class Match {
                     board[i] = pieceOnTile;
                     board[clickedTile] = null;
                     isFirstClick = true;
-                    clickedTile = 100;
+                    clickedTile = 99;
                     pieceOnTile = null;
 
                     if (colorsTurn == Color.WHITE){
@@ -91,7 +94,7 @@ public class Match {
                     adapter.notifyDataSetChanged();
                     gridView.setAdapter(adapter);
                     isFirstClick = true;
-                    clickedTile = 100;
+                    clickedTile = 99;
                     pieceOnTile = null;
                 }
 
