@@ -25,14 +25,39 @@ public class King extends AbstractPiece {
         ArrayList<Integer> aloudMoves = new ArrayList<>();
         Position temp2D = ArrayDimensionConverter.pieceToTwoDimension(position);
 
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r+1));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c, temp2D.r+1));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r+1));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r-1));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c, temp2D.r-1));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r-1));
+        int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r);
+        if (newPosition != 100 && board[newPosition] == null){
+            aloudMoves.add(newPosition);
+
+        }
+        newPosition = ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r+1);
+        if (newPosition != 100 && board[newPosition] == null){
+            aloudMoves.add(newPosition);
+        }
+        newPosition = ArrayDimensionConverter.pieceToOneDimension(temp2D.c, temp2D.r+1);
+        if (newPosition != 100 && board[newPosition] == null){
+            aloudMoves.add(newPosition);
+        }
+        newPosition = ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r+1);
+        if (newPosition != 100 && board[newPosition] == null){
+            aloudMoves.add(newPosition);
+        }
+        newPosition = ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r);
+        if (newPosition != 100 && board[newPosition] == null){
+            aloudMoves.add(newPosition);
+        }
+        newPosition = ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r-1);
+        if (newPosition != 100 && board[newPosition] == null){
+            aloudMoves.add(newPosition);
+        }
+        newPosition = ArrayDimensionConverter.pieceToOneDimension(temp2D.c, temp2D.r-1);
+        if (newPosition != 100 && board[newPosition] == null){
+            aloudMoves.add(newPosition);
+        }
+        newPosition = ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r-1);
+        if (newPosition != 100 && board[newPosition] == null){
+            aloudMoves.add(newPosition);
+        }
 
         return aloudMoves;
     }
