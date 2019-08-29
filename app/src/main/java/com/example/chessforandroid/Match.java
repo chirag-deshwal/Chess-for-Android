@@ -64,7 +64,8 @@ public class Match {
                 }
 
                 // Move is registered
-                else if (pieceOnTile != null && i != clickedTile && colorsTurn == pieceOnTile.color) {
+                else if (pieceOnTile != null && i != clickedTile && colorsTurn == pieceOnTile.color && aloudMoves.contains(i)) {
+
                     adapterView.getChildAt(clickedTile).setBackgroundColor(Constants.newBoardColors[clickedTile]);
                     board[i] = pieceOnTile;
                     board[clickedTile] = null;
