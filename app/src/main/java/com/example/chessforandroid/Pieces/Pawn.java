@@ -2,8 +2,8 @@ package com.example.chessforandroid.Pieces;
 
 import android.graphics.Color;
 
-import com.example.chessforandroid.ArrayDimensionConverter;
-import com.example.chessforandroid.Position;
+import com.example.chessforandroid.Tools.ArrayDimensionConverter;
+import com.example.chessforandroid.GameObjects.Position;
 import com.example.chessforandroid.R;
 
 import java.util.ArrayList;
@@ -21,8 +21,10 @@ public class Pawn extends AbstractPiece {
 
     @Override
     public ArrayList<Integer> getAloudMoves(Integer position, AbstractPiece[] board) {
+
         ArrayList<Integer> aloudMoves = new ArrayList<>();
         Position temp = ArrayDimensionConverter.pieceToTwoDimension(position);
+
         // If starting position
         if (position == 48 || position == 49 || position == 50 || position == 51 || position == 52 || position == 53 || position == 54 || position == 55){
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-1, temp.r));

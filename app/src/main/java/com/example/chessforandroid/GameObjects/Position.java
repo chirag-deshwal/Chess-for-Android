@@ -1,4 +1,4 @@
-package com.example.chessforandroid;
+package com.example.chessforandroid.GameObjects;
 
 public class Position {
     public int r;
@@ -8,5 +8,6 @@ public class Position {
         this.r = r;
         this.c = c;
     }
+
     public Position(){}
 }

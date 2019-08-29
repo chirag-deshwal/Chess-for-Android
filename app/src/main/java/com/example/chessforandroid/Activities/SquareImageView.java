@@ -1,4 +1,4 @@
-package com.example.chessforandroid;
+package com.example.chessforandroid.Activities;
 
 import android.content.Context;
 import android.util.AttributeSet;

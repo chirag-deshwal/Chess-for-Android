@@ -1,18 +1,15 @@
-package com.example.chessforandroid;
+package com.example.chessforandroid.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 
+import com.example.chessforandroid.Tools.Constants;
+import com.example.chessforandroid.GameObjects.Match;
 import com.example.chessforandroid.Pieces.AbstractPiece;
-import com.example.chessforandroid.Pieces.Pawn;
-
-import java.util.ArrayList;
+import com.example.chessforandroid.R;
 
 public class MainActivity extends AppCompatActivity {
 

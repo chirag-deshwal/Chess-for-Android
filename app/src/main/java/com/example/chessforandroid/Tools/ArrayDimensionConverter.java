@@ -1,4 +1,6 @@
-package com.example.chessforandroid;
+package com.example.chessforandroid.Tools;
+
+import com.example.chessforandroid.GameObjects.Position;
 
 import java.util.ArrayList;
 

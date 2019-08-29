@@ -1,12 +1,13 @@
-package com.example.chessforandroid;
+package com.example.chessforandroid.GameObjects;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.example.chessforandroid.Tools.Constants;
+import com.example.chessforandroid.Activities.GridViewAdapter;
 import com.example.chessforandroid.Pieces.AbstractPiece;
 
 import java.util.ArrayList;
@@ -22,11 +23,13 @@ public class Match {
         this.context = context;
         this.gridView = gridView;
     }
+
     public void reset(){
         board = Constants.newBoard;
         adapter.notifyDataSetChanged();
         gridView.setAdapter(adapter);
     }
+
     public void start(){
 
         board = Constants.newBoard;
@@ -45,6 +48,7 @@ public class Match {
 
                 //Highlighting the tile on first click
                 if (isFirstClick){
+
                     view.setBackgroundColor(Color.CYAN);
                     clickedTile = i;
                     pieceOnTile = board[i];
@@ -75,31 +79,34 @@ public class Match {
 
                     if (colorsTurn == Color.WHITE){
                         colorsTurn = Color.BLACK;
-                    } else {
+                    }
+                    else {
                         colorsTurn = Color.WHITE;
                     }
 
                     // Reverse board for turn switch
 
-                    for(int a = 0; a < board.length / 2; a++) {
+                    for(int a = 0; a < board.length / 2; a++)
+                    {
                         AbstractPiece temp = board[a];
                         board[a] = board[board.length -a  - 1];
                         board[board.length - a - 1] = temp;
                     }
+
                     aloudMoves = null;
                     adapter.notifyDataSetChanged();
                     gridView.setAdapter(adapter);
 
                 }
+
                 else {
+
                     adapter.notifyDataSetChanged();
                     gridView.setAdapter(adapter);
                     isFirstClick = true;
                     clickedTile = 99;
                     pieceOnTile = null;
                 }
-
-
             }
         });
     }

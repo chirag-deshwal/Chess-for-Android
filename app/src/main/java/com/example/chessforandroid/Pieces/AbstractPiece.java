@@ -11,6 +11,7 @@ public abstract class AbstractPiece {
         this.color = color;
     }
 
+    // TODO: Make this return a Set Collection to prevent duplication
     public abstract ArrayList<Integer> getAloudMoves(Integer position, AbstractPiece[] board);
 
 }

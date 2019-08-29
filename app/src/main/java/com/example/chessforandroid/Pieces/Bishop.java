@@ -2,8 +2,8 @@ package com.example.chessforandroid.Pieces;
 
 import android.graphics.Color;
 
-import com.example.chessforandroid.ArrayDimensionConverter;
-import com.example.chessforandroid.Position;
+import com.example.chessforandroid.Tools.ArrayDimensionConverter;
+import com.example.chessforandroid.GameObjects.Position;
 import com.example.chessforandroid.R;
 
 import java.util.ArrayList;
@@ -28,13 +28,16 @@ public class Bishop extends AbstractPiece {
 
         // TODO: Gotta fix the way i do this
         for (int i = 0; i < 8; i++){
+
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r-i));
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r+i));
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r-i));
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r+i));
         }
+
         return aloudMoves;
     }
+
     @Override
     public String toString() {
         if (color == Color.BLACK){

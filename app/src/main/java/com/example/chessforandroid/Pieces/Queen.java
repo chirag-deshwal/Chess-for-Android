@@ -2,8 +2,8 @@ package com.example.chessforandroid.Pieces;
 
 import android.graphics.Color;
 
-import com.example.chessforandroid.ArrayDimensionConverter;
-import com.example.chessforandroid.Position;
+import com.example.chessforandroid.Tools.ArrayDimensionConverter;
+import com.example.chessforandroid.GameObjects.Position;
 import com.example.chessforandroid.R;
 
 import java.util.ArrayList;
@@ -32,12 +32,14 @@ public class Queen extends AbstractPiece {
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r));
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r));
         }
+
         for (int i = 0; i < 8; i++){
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r-i));
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r+i));
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r-i));
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r+i));
         }
+
         return aloudMoves;
     }
 

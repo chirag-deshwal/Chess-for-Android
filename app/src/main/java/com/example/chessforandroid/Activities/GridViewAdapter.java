@@ -1,13 +1,14 @@
-package com.example.chessforandroid;
+package com.example.chessforandroid.Activities;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.example.chessforandroid.Tools.Constants;
 import com.example.chessforandroid.Pieces.AbstractPiece;
+import com.example.chessforandroid.R;
 
 public class GridViewAdapter extends BaseAdapter {
 
@@ -38,14 +39,17 @@ public class GridViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+
         view = layoutInflater.inflate(R.layout.tile_layout, null);
         SquareImageView imageView = view.findViewById(R.id.piece_image);
 
         // Set tile background colors
         view.setBackgroundColor(Constants.newBoardColors[i]);
+
         if (board[i] != null){
             imageView.setImageResource(board[i].imageID);
         }
+
         return view;
     }
 }

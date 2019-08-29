@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.chessforandroid.SquareImageView
+    <com.example.chessforandroid.Activities.SquareImageView
         android:id="@+id/piece_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
