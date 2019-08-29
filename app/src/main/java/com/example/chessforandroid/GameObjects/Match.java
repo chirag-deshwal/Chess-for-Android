@@ -61,7 +61,6 @@ public class Match {
                             if (aloudMoves.get(b) != 100){
                                 adapterView.getChildAt(aloudMoves.get(b)).setBackgroundColor(Color.CYAN);
                             }
-
                         }
                     } catch (Exception e){e.printStackTrace();}
 

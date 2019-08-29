@@ -16,7 +16,7 @@ public class Constants {
     public static final int dark = Color.parseColor("#696969");
     public static final int light = Color.parseColor("#b0b0b0");
 
-    public static final int newBoardColors[] = {
+    public static final int[] newBoardColors = {
             light, dark, light, dark, light, dark, light, dark,
             dark, light, dark, light, dark, light, dark, light,
             light, dark, light, dark, light, dark, light, dark,

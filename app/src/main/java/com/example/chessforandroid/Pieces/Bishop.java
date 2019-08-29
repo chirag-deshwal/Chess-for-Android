@@ -27,14 +27,44 @@ public class Bishop extends AbstractPiece {
         Position temp = ArrayDimensionConverter.pieceToTwoDimension(position);
 
         // TODO: Gotta fix the way i do this
-        for (int i = 0; i < 8; i++){
-
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r-i));
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r+i));
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r-i));
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r+i));
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r+i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
         }
-
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r-i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
+        }
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r-i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                System.out.println("EXITS");
+                i = 8;
+            }
+        }
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r+i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
+        }
+        System.out.println("BISHOP ALOUD ->"+aloudMoves);
         return aloudMoves;
     }
 
