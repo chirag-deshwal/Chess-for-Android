@@ -1,6 +1,7 @@
 package com.example.chessforandroid;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,7 +22,11 @@ public class Match {
         this.context = context;
         this.gridView = gridView;
     }
-
+    public void reset(){
+        board = Constants.newBoard;
+        adapter.notifyDataSetChanged();
+        gridView.setAdapter(adapter);
+    }
     public void start(){
 
         board = Constants.newBoard;
@@ -49,7 +54,7 @@ public class Match {
                     try {
                         aloudMoves = board[i].getAloudMoves(i, board);
                         for (int b = 0; b < aloudMoves.size(); b++){
-                            adapterView.getChildAt(aloudMoves.get(b)).setBackgroundColor(Color.GREEN);
+                            adapterView.getChildAt(aloudMoves.get(b)).setBackgroundColor(Color.CYAN);
                         }
                     } catch (Exception e){e.printStackTrace();}
 
