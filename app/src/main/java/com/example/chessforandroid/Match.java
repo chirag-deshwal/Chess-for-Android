@@ -8,6 +8,8 @@ import android.widget.GridView;
 
 import com.example.chessforandroid.Pieces.AbstractPiece;
 
+import java.util.ArrayList;
+
 public class Match {
 
     private Context context;
@@ -31,6 +33,7 @@ public class Match {
             private int clickedTile = 100;
             private AbstractPiece pieceOnTile = null;
             private int colorsTurn = Color.WHITE;
+            ArrayList<Integer> aloudMoves = new ArrayList<>();
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -43,6 +46,13 @@ public class Match {
                     isFirstClick = !isFirstClick;
 
                     //TODO: Show available moves
+                    try {
+                        aloudMoves = board[i].getAloudMoves(i, board);
+                        for (int b = 0; b < aloudMoves.size(); b++){
+                            adapterView.getChildAt(aloudMoves.get(b)).setBackgroundColor(Color.GREEN);
+                        }
+                    } catch (Exception e){e.printStackTrace();}
+
                 }
 
                 // Move is registered
@@ -67,7 +77,7 @@ public class Match {
                         board[a] = board[board.length -a  - 1];
                         board[board.length - a - 1] = temp;
                     }
-
+                    aloudMoves = null;
                     adapter.notifyDataSetChanged();
                     gridView.setAdapter(adapter);
 

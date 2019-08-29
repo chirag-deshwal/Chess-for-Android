@@ -2,7 +2,6 @@ package com.example.chessforandroid.Pieces;
 
 import android.graphics.Color;
 
-import com.example.chessforandroid.Integer;
 import com.example.chessforandroid.R;
 
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class Rook extends AbstractPiece {
     }
 
     @Override
-    public ArrayList<Integer> getAloudMoves(Integer position, AbstractPiece[][] board) {
+    public ArrayList<Integer> getAloudMoves(Integer position, AbstractPiece[] board) {
         return null;
     }
 
