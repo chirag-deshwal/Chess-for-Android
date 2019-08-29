@@ -51,7 +51,6 @@ public class Bishop extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
-                System.out.println("EXITS");
                 i = 8;
             }
         }
@@ -64,7 +63,6 @@ public class Bishop extends AbstractPiece {
                 i = 8;
             }
         }
-        System.out.println("BISHOP ALOUD ->"+aloudMoves);
         return aloudMoves;
     }
 

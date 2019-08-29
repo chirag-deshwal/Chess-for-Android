@@ -26,18 +26,82 @@ public class Queen extends AbstractPiece {
         ArrayList<Integer> aloudMoves = new ArrayList<>();
         Position temp = ArrayDimensionConverter.pieceToTwoDimension(position);
 
-        for (int i = 0; i < 8; i++){
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c, temp.r-i));
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c, temp.r+i));
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r));
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r));
+        // STRAIGHT
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c, temp.r+i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
+        }
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c, temp.r-i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
+        }
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
+        }
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
         }
 
-        for (int i = 0; i < 8; i++){
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r-i));
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r+i));
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r-i));
-            aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r+i));
+        // TODO: Gotta fix the way i do this
+
+        //DIAGONAL
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r+i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
+        }
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r-i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
+        }
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r-i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
+        }
+        for (int i = 1; i < 8; i++){
+            int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c+i, temp.r+i);
+            if (newPosition != 100 && board[newPosition] == null) {
+                aloudMoves.add(newPosition);
+            }
+            else {
+                i = 8;
+            }
         }
 
         return aloudMoves;
