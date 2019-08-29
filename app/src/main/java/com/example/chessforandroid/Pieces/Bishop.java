@@ -25,7 +25,7 @@ public class Bishop extends AbstractPiece {
     public ArrayList<Integer> getAloudMoves(Integer position, AbstractPiece[] board) {
         ArrayList<Integer> aloudMoves = new ArrayList<>();
         Position temp = ArrayDimensionConverter.pieceToTwoDimension(position);
-        
+
         // TODO: Gotta fix the way i do this
         for (int i = 0; i < 8; i++){
             aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r-i));
