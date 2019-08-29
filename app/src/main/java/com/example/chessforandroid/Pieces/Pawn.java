@@ -26,12 +26,18 @@ public class Pawn extends AbstractPiece {
 
         // If starting position
         if (position == 48 || position == 49 || position == 50 || position == 51 || position == 52 || position == 53 || position == 54 || position == 55){
-            aloudMoves.add(position - 8);
-            aloudMoves.add(position - 16);
+            if (board[position-8] == null){
+                aloudMoves.add(position - 8);
+            }
+            if (board[position-16] == null){
+                aloudMoves.add(position - 16);
+            }
         }
         // Not starting position
         else {
-            aloudMoves.add(position - 8);
+            if (board[position-8] == null){
+                aloudMoves.add(position - 8);
+            }
         }
         // Attack Left
         if (board[position-9] != null){
