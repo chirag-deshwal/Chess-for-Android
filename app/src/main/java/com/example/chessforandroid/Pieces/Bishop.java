@@ -33,6 +33,10 @@ public class Bishop extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                System.out.println("ELSE");
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -42,6 +46,10 @@ public class Bishop extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                System.out.println("ELSE");
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -51,6 +59,10 @@ public class Bishop extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                System.out.println("ELSE");
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -60,6 +72,10 @@ public class Bishop extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                System.out.println("ELSE");
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
