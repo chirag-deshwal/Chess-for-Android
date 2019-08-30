@@ -4,8 +4,12 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.chessforandroid.Pieces.King;
 import com.example.chessforandroid.Tools.Constants;
 import com.example.chessforandroid.Activities.GridViewAdapter;
 import com.example.chessforandroid.Pieces.AbstractPiece;
@@ -18,16 +22,12 @@ public class Match {
     private GridView gridView;
     GridViewAdapter adapter;
     private AbstractPiece[] board;
+    TextView textView;
 
-    public Match(Context context, GridView gridView) {
+    public Match(Context context, GridView gridView, TextView textView) {
         this.context = context;
         this.gridView = gridView;
-    }
-
-    public void reset(){
-        board = Constants.newBoard;
-        adapter.notifyDataSetChanged();
-        gridView.setAdapter(adapter);
+        this.textView = textView;
     }
 
     public void start(){
@@ -70,6 +70,16 @@ public class Match {
                 else if (pieceOnTile != null && i != clickedTile && colorsTurn == pieceOnTile.color && aloudMoves.contains(i)) {
 
                     adapterView.getChildAt(clickedTile).setBackgroundColor(Constants.newBoardColors[clickedTile]);
+                    if (board[i] != null && board[i].getClass() == King.class){
+
+                        if (board[i].color == Color.WHITE){
+                            textView.setText("BLACK WINS");
+                        }
+                        else {
+                            textView.setText("WHITE WINS");
+                        }
+                    }
+
                     board[i] = pieceOnTile;
                     board[clickedTile] = null;
                     isFirstClick = true;
@@ -84,7 +94,6 @@ public class Match {
                     }
 
                     // Reverse board for turn switch
-
                     for(int a = 0; a < board.length / 2; a++)
                     {
                         AbstractPiece temp = board[a];
