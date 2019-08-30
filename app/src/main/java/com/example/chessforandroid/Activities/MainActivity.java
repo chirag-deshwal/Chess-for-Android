@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         button_reset.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 finish();
+                 android.os.Process.killProcess(android.os.Process.myPid());
              }
          });
     }

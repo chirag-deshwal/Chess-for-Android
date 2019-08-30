@@ -72,10 +72,10 @@ public class Match {
                     adapterView.getChildAt(clickedTile).setBackgroundColor(Constants.newBoardColors[clickedTile]);
                     if (board[i] != null && board[i].getClass() == King.class){
 
-                        if (board[i].color == Color.WHITE){
+                        if (board[i].color == Color.WHITE && textView.getText() == ""){
                             textView.setText("BLACK WINS");
                         }
-                        else {
+                        else if ( board[i].color == Color.BLACK && textView.getText() == "") {
                             textView.setText("WHITE WINS");
                         }
                     }
