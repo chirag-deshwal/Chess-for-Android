@@ -23,6 +23,7 @@ public class Pawn extends AbstractPiece {
     public ArrayList<Integer> getAloudMoves(Integer position, AbstractPiece[] board) {
 
         ArrayList<Integer> aloudMoves = new ArrayList<>();
+        Position temp = ArrayDimensionConverter.pieceToTwoDimension(position);
 
         // If starting position
         if (position == 48 || position == 49 || position == 50 || position == 51 || position == 52 || position == 53 || position == 54 || position == 55){
@@ -40,11 +41,11 @@ public class Pawn extends AbstractPiece {
             }
         }
         // Attack Left
-        if (board[position-9] != null){
+        if (board[position-9] != null && board[position-9].color != board[position].color){
             aloudMoves.add(position-9);
         }
         // Attack Right
-        if (board[position-7] != null){
+        if (board[position-7] != null && board[position-7].color != board[position].color){
             aloudMoves.add(position-7);
         }
 

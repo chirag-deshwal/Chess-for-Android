@@ -25,15 +25,28 @@ public class Knight extends AbstractPiece {
         ArrayList<Integer> aloudMoves = new ArrayList<>();
         Position temp2D = ArrayDimensionConverter.pieceToTwoDimension(position);
 
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c-2, temp2D.r-1));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c-2, temp2D.r+1));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c+2, temp2D.r-1));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c+2, temp2D.r+1));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r+2));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r-2));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r+2));
-        aloudMoves.add(ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r-2));
+        int pos1 = ArrayDimensionConverter.pieceToOneDimension(temp2D.c-2, temp2D.r-1);
+        int pos2 = ArrayDimensionConverter.pieceToOneDimension(temp2D.c-2, temp2D.r+1);
+        int pos3 = ArrayDimensionConverter.pieceToOneDimension(temp2D.c+2, temp2D.r-1);
+        int pos4 = ArrayDimensionConverter.pieceToOneDimension(temp2D.c+2, temp2D.r+1);
+        int pos5 = ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r+2);
+        int pos6 = ArrayDimensionConverter.pieceToOneDimension(temp2D.c-1, temp2D.r-2);
+        int pos7 = ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r+2);
+        int pos8 = ArrayDimensionConverter.pieceToOneDimension(temp2D.c+1, temp2D.r-2);
 
+        int[] temp = {pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8};
+
+        for (int i = 0; i < temp.length; i++){
+            if (temp[i] !=100 && board[temp[i]] == null){
+                aloudMoves.add(temp[i]);
+            }
+            else {
+                if (temp[i] !=100 && board[temp[i]].color != board[position].color){
+                    aloudMoves.add(temp[i]);
+                }
+            }
+        }
+        System.out.println(aloudMoves);
         return aloudMoves;
     }
 

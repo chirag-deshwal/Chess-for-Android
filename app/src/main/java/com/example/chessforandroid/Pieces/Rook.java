@@ -33,6 +33,9 @@ public class Rook extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -42,6 +45,9 @@ public class Rook extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -51,6 +57,9 @@ public class Rook extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -60,10 +69,12 @@ public class Rook extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
-
         return aloudMoves;
     }
 

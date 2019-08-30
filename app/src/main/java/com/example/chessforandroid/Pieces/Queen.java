@@ -33,6 +33,9 @@ public class Queen extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -42,6 +45,9 @@ public class Queen extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -51,6 +57,9 @@ public class Queen extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -60,19 +69,24 @@ public class Queen extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
 
         // TODO: Gotta fix the way i do this
-
-        //DIAGONAL
         for (int i = 1; i < 8; i++){
             int newPosition = ArrayDimensionConverter.pieceToOneDimension(temp.c-i, temp.r+i);
             if (newPosition != 100 && board[newPosition] == null) {
                 aloudMoves.add(newPosition);
             }
             else {
+                System.out.println("ELSE");
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -82,6 +96,10 @@ public class Queen extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                System.out.println("ELSE");
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -91,6 +109,10 @@ public class Queen extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                System.out.println("ELSE");
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
@@ -100,10 +122,13 @@ public class Queen extends AbstractPiece {
                 aloudMoves.add(newPosition);
             }
             else {
+                System.out.println("ELSE");
+                if (newPosition < 64 && board[newPosition].color != board[position].color){
+                    aloudMoves.add(newPosition);
+                }
                 i = 8;
             }
         }
-
         return aloudMoves;
     }
 
