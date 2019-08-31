@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chessforandroid.Pieces.King;
+import com.example.chessforandroid.Pieces.Pawn;
 import com.example.chessforandroid.Tools.Constants;
 import com.example.chessforandroid.Activities.GridViewAdapter;
 import com.example.chessforandroid.Pieces.AbstractPiece;
@@ -20,21 +21,22 @@ public class Match {
 
     private Context context;
     private GridView gridView;
-    GridViewAdapter adapter;
+    private GridViewAdapter adapter;
     private AbstractPiece[] board;
-    TextView textView;
+    private TextView textView;
 
     public Match(Context context, GridView gridView, TextView textView) {
         this.context = context;
         this.gridView = gridView;
         this.textView = textView;
-    }
-
-    public void start(){
 
         board = Constants.newBoard;
         adapter = new GridViewAdapter(context, board);
         gridView.setAdapter(adapter);
+    }
+
+    public void start(){
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             private boolean isFirstClick = true;

@@ -10,8 +10,13 @@ import java.util.ArrayList;
 
 public class Pawn extends AbstractPiece {
 
+    public boolean isFirstMove;
+    public boolean shadowIsActive;
+
     public Pawn(int color) {
         super(color);
+        this.isFirstMove = true;
+        shadowIsActive = false;
         if (color == Color.WHITE){
             this.imageID = R.drawable.w_pawn;
         } else {
